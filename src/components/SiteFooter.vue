@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { useI18n } from '../i18n'
 import { SITE } from '../data/site'
+import { asset } from '../lib/asset'
 
 const { t } = useI18n()
 const year = 2026
@@ -10,7 +11,7 @@ const year = 2026
   <footer>
     <div class="container foot-grid">
       <div class="foot-brand">
-        <img class="foot-logo" src="/logo-white.svg" alt="FARM Analytica" />
+        <img class="foot-logo" :src="asset('logo-white.svg')" alt="FARM Analytica" />
         <p>{{ t('footer.tagline') }}</p>
       </div>
 

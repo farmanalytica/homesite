@@ -3,6 +3,7 @@ import { useI18n } from '../i18n'
 import { SITE } from '../data/site'
 import { POSTS } from '../data/posts'
 import { FOUNDERS } from '../data/founders'
+import { asset } from '../lib/asset'
 import SolutionsCarousel from '../components/SolutionsCarousel.vue'
 
 const { t } = useI18n()
@@ -12,9 +13,9 @@ const teaserPosts = POSTS.slice(0, 3)
 <template>
   <!-- Hero -->
   <section class="hero hero--home">
-    <div class="hero-bg" style="background-image: url('/img/hero-field.webp')"></div>
+    <div class="hero-bg" :style="{ backgroundImage: `url('${asset('img/hero-field.webp')}')` }"></div>
     <div class="container hero-inner">
-      <img class="hero-logo" src="/logo-white.svg" alt="FARM Analytica" />
+      <img class="hero-logo" :src="asset('logo-white.svg')" alt="FARM Analytica" />
       <p class="hero-tagline">{{ t('hero.title') }}</p>
       <a class="btn btn-accent btn-lg" :href="SITE.whatsapp" target="_blank" rel="noopener noreferrer">
         {{ t('hero.cta') }}
@@ -80,7 +81,7 @@ const teaserPosts = POSTS.slice(0, 3)
       <h2>{{ t('founders.title') }}</h2>
       <div class="team">
         <div v-for="f in FOUNDERS" :key="f.key" class="team-card">
-          <img class="team-avatar" :src="f.image" :alt="t(`founders.${f.key}.name`)" loading="lazy" />
+          <img class="team-avatar" :src="asset(f.image)" :alt="t(`founders.${f.key}.name`)" loading="lazy" />
           <div class="team-info">
             <div class="role">{{ t(`founders.${f.key}.role`) }}</div>
             <h3>{{ t(`founders.${f.key}.name`) }}</h3>

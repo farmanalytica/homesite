@@ -2,6 +2,7 @@
 import { ref, onMounted, onUnmounted } from 'vue'
 import { useI18n, SUPPORTED_LOCALES, type Locale } from '../i18n'
 import { SITE } from '../data/site'
+import { asset } from '../lib/asset'
 
 const { locale, setLocale, t } = useI18n()
 const menuOpen = ref(false)
@@ -28,7 +29,7 @@ onUnmounted(() => window.removeEventListener('scroll', onScroll))
   <header :class="{ solid: scrolled || menuOpen }">
     <div class="container nav">
       <router-link class="brand" to="/" @click="closeMenu" aria-label="FARM Analytica">
-        <img class="brand-logo" :src="scrolled || menuOpen ? '/logo.svg' : '/logo-white.svg'" alt="FARM Analytica" />
+        <img class="brand-logo" :src="asset(scrolled || menuOpen ? 'logo.svg' : 'logo-white.svg')" alt="FARM Analytica" />
       </router-link>
       <div class="nav-right">
         <nav class="nav-links" :class="{ open: menuOpen }" aria-label="Navegação principal">

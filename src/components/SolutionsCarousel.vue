@@ -3,6 +3,7 @@ import { ref, onMounted, onUnmounted } from 'vue'
 import { useI18n } from '../i18n'
 import { SITE } from '../data/site'
 import { SOLUTIONS } from '../data/solutions'
+import { asset } from '../lib/asset'
 import ImageGallery from './ImageGallery.vue'
 
 const { t } = useI18n()
@@ -37,7 +38,7 @@ onUnmounted(stop)
     <div class="track" :style="{ transform: `translateX(-${index * 100}%)` }">
       <div v-for="s in SOLUTIONS" :key="s.key" class="slide">
         <div class="slide-media">
-          <ImageGallery :images="s.gallery" :alt="t(`solutions.${s.key}.name`)" />
+          <ImageGallery :images="s.gallery.map(asset)" :alt="t(`solutions.${s.key}.name`)" />
         </div>
         <div class="slide-body">
           <span v-if="s.featured" class="badge">Recomendado</span>

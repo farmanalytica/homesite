@@ -2,6 +2,7 @@
 import { useI18n } from '../i18n'
 import { SITE } from '../data/site'
 import type { Solution } from '../data/solutions'
+import { asset } from '../lib/asset'
 import ImageGallery from './ImageGallery.vue'
 
 defineProps<{ solution: Solution }>()
@@ -11,7 +12,7 @@ const { t } = useI18n()
 <template>
   <div class="card sol-card" :class="{ featured: solution.featured }">
     <div class="sol-banner">
-      <ImageGallery :images="solution.gallery" :alt="t(`solutions.${solution.key}.name`)" />
+      <ImageGallery :images="solution.gallery.map(asset)" :alt="t(`solutions.${solution.key}.name`)" />
       <span v-if="solution.featured" class="badge">Recomendado</span>
     </div>
     <h3>{{ t(`solutions.${solution.key}.name`) }}</h3>
