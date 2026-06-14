@@ -29,7 +29,18 @@ jobs:
 
       - run: npm ci
 
+      # VITE_BASE controls the base path:
+      #   unset/empty -> '/homesite/' (project page, github.io/homesite/)
+      #   '/'         -> site root (custom domain farmanalytica.com.br)
       - run: npm run build
+        env:
+          VITE_BASE: ${{ vars.VITE_BASE }}
+
+      # When deploying at the root, emit the CNAME so Pages serves the
+      # custom domain. Set the repo variable VITE_BASE=/ to switch over.
+      - name: Add CNAME for custom domain
+        if: ${{ vars.VITE_BASE == '/' }}
+        run: echo 'farmanalytica.com.br' > dist/CNAME
 
       - uses: actions/upload-pages-artifact@v3
         with:

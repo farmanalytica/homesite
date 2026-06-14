@@ -10,8 +10,30 @@ WordPress implementation of [farmanalytica.com.br](https://farmanalytica.com.br)
 - Lightweight custom **i18n** (pt-BR default, en-US toggle) — see `src/i18n/`
 - Plain global CSS design system in `src/styles/main.css` (shared design tokens,
   `.btn`, `.card`, `.step`, etc.) — same approach as the FARM tools site
-- Deployed to **GitHub Pages** at the custom domain root (`public/CNAME`,
-  `public/404.html` SPA redirect, `public/.nojekyll`)
+- Deployed to **GitHub Pages** via `.github/workflows/deploy.yml`
+  (`public/404.html` SPA redirect, `public/.nojekyll`)
+
+## Deploy & base path
+
+The workflow builds on every push to `main`. The base path is controlled by the
+`VITE_BASE` **repository variable**:
+
+| `VITE_BASE` | Result | URL |
+| --- | --- | --- |
+| unset / empty (default) | project subpath build | `https://farmanalytica.github.io/homesite/` |
+| `/` | root build + auto-generated `CNAME` | `https://farmanalytica.com.br` |
+
+All public asset paths resolve through `import.meta.env.BASE_URL` (`src/lib/asset.ts`),
+so both modes work without code changes.
+
+**Switch to the custom domain:**
+
+```bash
+gh variable set VITE_BASE --body "/"
+# then configure DNS (A/ALIAS to GitHub Pages) and set the domain in repo Pages settings
+```
+
+Set it back to the subpath with `gh variable delete VITE_BASE`.
 
 ## Develop
 
