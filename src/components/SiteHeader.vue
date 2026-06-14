@@ -51,6 +51,10 @@ onUnmounted(() => window.removeEventListener('scroll', onScroll))
               >
                 {{ t(`solutions.${s.key}.name`) }}
               </router-link>
+              <span class="dd-sep"></span>
+              <router-link class="dd-ft" to="/farm-tools" @click="closeMenu">
+                <img :src="asset('farmtools-logo.svg')" alt="FARM tools" />
+              </router-link>
             </div>
           </div>
           <router-link to="/blog" @click="closeMenu">{{ t('nav.blog') }}</router-link>
@@ -224,6 +228,22 @@ header.solid .nav-links a.router-link-active {
 .dd-menu a:hover {
   background: var(--bg);
   color: var(--primary) !important;
+}
+
+.dd-sep {
+  height: 1px;
+  background: var(--border);
+  margin: 0.3rem 0.2rem;
+}
+
+.dd-ft {
+  padding: 0.55rem 0.7rem;
+}
+
+.dd-ft img {
+  height: 18px;
+  width: auto;
+  display: block;
 }
 
 .socials {
