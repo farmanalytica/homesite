@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FARM Analytica | Tecnologia e dados para o agronegócio</title>
+    <meta
+      name="description"
+      content="Tecnologia e dados inteligentes para transformar o futuro do agronegócio. Monitoramento por satélite, mapas NDVI, sensoriamento remoto e inteligência de dados para produtores rurais, consultores e empresas."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="FARM Analytica | Tecnologia e dados para o agronegócio" />
+    <meta
+      property="og:description"
+      content="Monitoramento por satélite e inteligência de dados para um agro mais inteligente."
+    />
+    <meta property="og:url" content="https://farmanalytica.com.br/" />
+    <link rel="icon" type="image/png" href="/farm_icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="app"></div>
+    <script>
+      // GitHub Pages SPA redirect: 404.html stashes the path, restore it here.
+      (function () {
+        var redirect = sessionStorage.redirect
+        delete sessionStorage.redirect
+        if (redirect && redirect != location.href) {
+          history.replaceState(null, null, redirect)
+        }
+      })()
+    </script>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
