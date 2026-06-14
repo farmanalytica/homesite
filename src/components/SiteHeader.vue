@@ -2,6 +2,7 @@
 import { ref, onMounted, onUnmounted } from 'vue'
 import { useI18n, SUPPORTED_LOCALES, type Locale } from '../i18n'
 import { SITE } from '../data/site'
+import { SOLUTIONS } from '../data/solutions'
 import { asset } from '../lib/asset'
 
 const { locale, setLocale, t } = useI18n()
@@ -34,7 +35,24 @@ onUnmounted(() => window.removeEventListener('scroll', onScroll))
       <div class="nav-right">
         <nav class="nav-links" :class="{ open: menuOpen }" aria-label="Navegação principal">
           <router-link to="/" @click="closeMenu">{{ t('nav.home') }}</router-link>
-          <router-link to="/solucoes" @click="closeMenu">{{ t('nav.solucoes') }}</router-link>
+          <div class="nav-dd">
+            <router-link class="dd-trigger" to="/solucoes" @click="closeMenu">
+              {{ t('nav.solucoes') }}
+              <svg class="dd-caret" viewBox="0 0 12 12" width="10" height="10" fill="currentColor" aria-hidden="true">
+                <path d="M6 8.5 1.5 4h9z" />
+              </svg>
+            </router-link>
+            <div class="dd-menu">
+              <router-link
+                v-for="s in SOLUTIONS"
+                :key="s.key"
+                :to="`/solucoes/${s.key}`"
+                @click="closeMenu"
+              >
+                {{ t(`solutions.${s.key}.name`) }}
+              </router-link>
+            </div>
+          </div>
           <router-link to="/blog" @click="closeMenu">{{ t('nav.blog') }}</router-link>
           <router-link to="/contato" @click="closeMenu">{{ t('nav.contato') }}</router-link>
         </nav>
@@ -147,6 +165,67 @@ header.solid .nav-links a.router-link-active {
   opacity: 1;
 }
 
+/* Solutions dropdown */
+.nav-dd {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.dd-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.dd-caret {
+  transition: transform 0.18s;
+}
+
+.nav-dd:hover .dd-caret {
+  transform: rotate(180deg);
+}
+
+.dd-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 220px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--r-sm);
+  box-shadow: var(--sh-md);
+  padding: 0.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(6px);
+  transition: opacity 0.18s, transform 0.18s, visibility 0.18s;
+  z-index: 60;
+}
+
+.nav-dd:hover .dd-menu,
+.nav-dd:focus-within .dd-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+}
+
+.dd-menu a {
+  color: var(--text-soft) !important;
+  padding: 0.5rem 0.7rem;
+  border-radius: 6px;
+  font-size: 0.88rem;
+  white-space: nowrap;
+}
+
+.dd-menu a:hover {
+  background: var(--bg);
+  color: var(--primary) !important;
+}
+
 .socials {
   display: flex;
   align-items: center;
@@ -255,6 +334,33 @@ header.solid .menu-toggle {
 
   .nav-right {
     gap: 0.8rem;
+  }
+
+  .nav-dd {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .dd-caret {
+    display: none;
+  }
+
+  .dd-menu {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    box-shadow: none;
+    border: none;
+    background: transparent;
+    padding: 0 0 0 1rem;
+    min-width: 0;
+  }
+
+  .dd-menu a {
+    font-size: 0.92rem;
+    padding: 0.4rem 0;
   }
 }
 
