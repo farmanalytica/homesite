@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomePage from '../pages/HomePage.vue'
 import SolucoesPage from '../pages/SolucoesPage.vue'
+import SolutionDetailPage from '../pages/SolutionDetailPage.vue'
 import BlogPage from '../pages/BlogPage.vue'
 import ContatoPage from '../pages/ContatoPage.vue'
 import PrivacidadePage from '../pages/PrivacidadePage.vue'
@@ -10,6 +11,7 @@ const router = createRouter({
   routes: [
     { path: '/', name: 'home', component: HomePage },
     { path: '/solucoes', name: 'solucoes', component: SolucoesPage },
+    { path: '/solucoes/:slug', name: 'solucao', component: SolutionDetailPage },
     { path: '/blog', name: 'blog', component: BlogPage },
     { path: '/contato', name: 'contato', component: ContatoPage },
     { path: '/politica-de-privacidade', name: 'privacidade', component: PrivacidadePage },

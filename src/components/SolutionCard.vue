@@ -30,9 +30,14 @@ const { t } = useI18n()
         {{ t(`solutions.${solution.key}.f4`) }}
       </li>
     </ul>
-    <a class="btn btn-primary sol-cta" :href="SITE.whatsapp" target="_blank" rel="noopener noreferrer">
-      {{ t('common.talkToUs') }}
-    </a>
+    <div class="sol-cta">
+      <router-link class="btn btn-primary" :to="`/solucoes/${solution.key}`">
+        {{ t('solutions.viewDetails') }}
+      </router-link>
+      <a class="btn btn-ghost-dark" :href="SITE.whatsapp" target="_blank" rel="noopener noreferrer">
+        {{ t('common.talkToUs') }}
+      </a>
+    </div>
   </div>
 </template>
 
@@ -86,12 +91,14 @@ const { t } = useI18n()
 
 .sol-cta {
   margin-top: auto;
-  align-self: flex-start;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
 }
 
 @media (max-width: 480px) {
   .sol-cta {
-    align-self: stretch;
+    flex-direction: column;
   }
 }
 </style>

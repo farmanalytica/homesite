@@ -57,9 +57,14 @@ onUnmounted(stop)
               {{ t(`solutions.${s.key}.f4`) }}
             </li>
           </ul>
-          <a class="btn btn-accent" :href="SITE.whatsapp" target="_blank" rel="noopener noreferrer">
-            {{ t('common.specialist') }}
-          </a>
+          <div class="slide-actions">
+            <a class="btn btn-accent" :href="SITE.whatsapp" target="_blank" rel="noopener noreferrer">
+              {{ t('common.specialist') }}
+            </a>
+            <router-link class="btn btn-ghost-dark" :to="`/solucoes/${s.key}`">
+              {{ t('solutions.viewDetails') }}
+            </router-link>
+          </div>
         </div>
       </div>
     </div>
@@ -162,6 +167,12 @@ onUnmounted(stop)
 
 .slide-body .feature-list {
   margin-bottom: 1.6rem;
+}
+
+.slide-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
 }
 
 .badge {

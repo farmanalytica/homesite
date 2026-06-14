@@ -21,12 +21,16 @@ export default {
     label: 'Soluções',
     title: 'Do produtor rural à grande empresa',
     lead: 'Monitoramento por satélite e inteligência de dados em planos pensados para cada etapa da jornada no agro.',
+    viewDetails: 'Ver detalhes',
+    back: 'Voltar para Soluções',
     basic: {
       name: 'Sensoriamento BASIC',
       audience: 'Para produtores rurais',
       price: 'R$ 179,90',
       period: '/mês',
       tagline: 'Monitore sua lavoura com confiança usando mapas NDVI semanais por satélite.',
+      detail:
+        'Você precisa de informações rápidas e precisas para tomar as melhores decisões, mas as ferramentas costumam ser caras e complexas. O Sensoriamento BASIC coloca o potencial do monitoramento por satélite na palma da sua mão: mapas NDVI semanais que mostram a saúde da sua lavoura e ajudam a identificar problemas antes que se tornem perdas.',
       f1: 'Mapas NDVI atualizados toda semana',
       f2: 'Identifique problemas antes que virem perdas',
       f3: 'Relatórios por e-mail ou WhatsApp',
@@ -37,6 +41,8 @@ export default {
       price: 'R$ 479,90',
       period: '/mês',
       tagline: 'Entregas mais frequentes, análises detalhadas e suporte de analista dedicado.',
+      detail:
+        'Para quem precisa de mais profundidade, o Sensoriamento PREMIUM entrega imagens com maior frequência, índices e análises detalhadas, além de um analista dedicado para apoiar suas decisões. Recomendado para propriedades acima de 100 hectares.',
       f1: 'Frequência maior de imagens e índices',
       f2: 'Análises detalhadas e recomendações',
       f3: 'Analista dedicado',
@@ -47,6 +53,8 @@ export default {
       price: 'Sob consulta',
       period: '',
       tagline: 'Ferramentas profissionais com relatórios personalizáveis e integração ao seu fluxo de trabalho.',
+      detail:
+        'O Assist FARM equipa consultores e empresas do agro com ferramentas profissionais: relatórios personalizáveis, integração ao seu fluxo de trabalho e desenvolvimento de ferramentas de automação sob medida, para escalar o atendimento sem perder qualidade técnica.',
       f1: 'Relatórios personalizáveis',
       f2: 'Integração ao seu workflow',
       f3: 'Suporte técnico especializado',
@@ -58,6 +66,8 @@ export default {
       price: 'Sob consulta',
       period: '',
       tagline: 'Solução corporativa com análise de risco e inteligência de mercado em larga escala.',
+      detail:
+        'O Monitoramento FARM é a solução corporativa para acompanhar carteiras com milhares de propriedades, com análise de risco e inteligência de mercado em larga escala, integração via API e consultoria em desenvolvimento de software especializado.',
       f1: 'Monitoramento de carteiras com milhares de propriedades',
       f2: 'Análise de risco e inteligência de mercado',
       f3: 'Integração via API',

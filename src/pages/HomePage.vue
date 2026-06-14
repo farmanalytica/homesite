@@ -33,37 +33,6 @@ const teaserPosts = POSTS.slice(0, 3)
     </div>
   </section>
 
-  <!-- How it works -->
-  <section>
-    <div class="container">
-      <p class="sec-label">{{ t('steps.label') }}</p>
-      <h2>{{ t('steps.title') }}</h2>
-      <div class="steps-col" style="margin-top: 1.8rem">
-        <div class="step">
-          <div class="step-num">1</div>
-          <div class="step-body">
-            <h3>{{ t('steps.s1t') }}</h3>
-            <p>{{ t('steps.s1d') }}</p>
-          </div>
-        </div>
-        <div class="step">
-          <div class="step-num">2</div>
-          <div class="step-body">
-            <h3>{{ t('steps.s2t') }}</h3>
-            <p>{{ t('steps.s2d') }}</p>
-          </div>
-        </div>
-        <div class="step">
-          <div class="step-num">3</div>
-          <div class="step-body">
-            <h3>{{ t('steps.s3t') }}</h3>
-            <p>{{ t('steps.s3d') }}</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- About -->
   <section class="alt">
     <div class="container">

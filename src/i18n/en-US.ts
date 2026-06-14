@@ -21,12 +21,16 @@ export default {
     label: 'Solutions',
     title: 'From the family farm to the enterprise',
     lead: 'Satellite monitoring and data intelligence in plans designed for every stage of the agribusiness journey.',
+    viewDetails: 'View details',
+    back: 'Back to Solutions',
     basic: {
       name: 'Sensing BASIC',
       audience: 'For rural producers',
       price: 'R$ 179.90',
       period: '/month',
       tagline: 'Monitor your fields with confidence using weekly satellite NDVI maps.',
+      detail:
+        'You need fast, accurate information to make the best decisions, but the tools are often expensive and complex. Sensing BASIC puts the power of satellite monitoring in the palm of your hand: weekly NDVI maps that show the health of your fields and help you spot problems before they become losses.',
       f1: 'Fresh NDVI maps every week',
       f2: 'Spot problems before they become losses',
       f3: 'Reports via email or WhatsApp',
@@ -37,6 +41,8 @@ export default {
       price: 'R$ 479.90',
       period: '/month',
       tagline: 'More frequent deliveries, detailed analysis, and a dedicated analyst.',
+      detail:
+        'For those who need more depth, Sensing PREMIUM delivers more frequent imagery, detailed indices and analysis, plus a dedicated analyst to support your decisions. Recommended for properties over 100 hectares.',
       f1: 'Higher image and index frequency',
       f2: 'Detailed analysis and recommendations',
       f3: 'Dedicated analyst',
@@ -47,6 +53,8 @@ export default {
       price: 'On request',
       period: '',
       tagline: 'Professional tools with customizable reports and workflow integration.',
+      detail:
+        'Assist FARM equips consultants and agribusiness companies with professional tools: customizable reports, workflow integration, and custom automation tool development, so you can scale your service without losing technical quality.',
       f1: 'Customizable reports',
       f2: 'Workflow integration',
       f3: 'Specialized technical support',
@@ -58,6 +66,8 @@ export default {
       price: 'On request',
       period: '',
       tagline: 'Enterprise solution with risk analysis and market intelligence at scale.',
+      detail:
+        'Monitoring FARM is the enterprise solution for tracking portfolios across thousands of properties, with risk analysis and market intelligence at scale, API integration, and specialized software development consulting.',
       f1: 'Portfolio monitoring across thousands of properties',
       f2: 'Risk analysis and market intelligence',
       f3: 'API integration',
