@@ -114,6 +114,7 @@ const teaserPosts = POSTS.slice(0, 3)
             </a>
           </div>
         </div>
+        <img class="project-image" :src="asset('img/dem.png')" alt="Modelo digital de elevação" />
       </div>
     </div>
   </section>
@@ -179,4 +180,3 @@ const teaserPosts = POSTS.slice(0, 3)
   }
 }
 </style>
-

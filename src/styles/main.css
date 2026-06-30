@@ -165,7 +165,6 @@ section.alt {
 .hero-inner {
   position: relative;
   z-index: 1;
-  max-width: 640px;
 }
 
 .hero-logo {
@@ -276,16 +275,38 @@ section.alt {
   border: 1px solid var(--accent-border);
   border-radius: var(--r);
   padding: 2.6rem 2.8rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(220px, 34%);
+  align-items: center;
+  gap: 2rem;
 }
 
 .project-text {
   max-width: 70ch;
 }
 
+.project-image {
+  width: 100%;
+  max-width: 320px;
+  justify-self: end;
+  display: block;
+}
+
 .project-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 0.8rem;
+}
+
+@media (max-width: 760px) {
+  .project-band {
+    grid-template-columns: 1fr;
+  }
+
+  .project-image {
+    justify-self: start;
+    max-width: min(100%, 280px);
+  }
 }
 
 @media (max-width: 480px) {
@@ -506,7 +527,7 @@ section.alt {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1.2rem;
-  max-width: 760px;
+  width: 100%;
 }
 
 .team-card {

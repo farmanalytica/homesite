@@ -24,7 +24,7 @@ export const SOLUTIONS: Solution[] = [
   },
   {
     key: 'assist',
-    gallery: ['/img/sol/assist-1.webp', '/img/sol/assist-2.webp', '/img/sol/assist-3.webp'],
+    gallery: ['/img/sol/assist-1.webp'],
   },
   {
     key: 'monitoramento',
